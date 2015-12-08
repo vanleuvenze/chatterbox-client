@@ -6,7 +6,7 @@ body {
 }
 
 #main, #chats {
-    width: 500px;
+    width: 80%;
     margin: auto;
     text-align: left;
     background: white;
@@ -58,13 +58,34 @@ form input[type=text] {
     font-size: 12px;
     padding: 5px;
 }
+#chats {
+    width: 80%;
+    height: 500px;
+    overflow: scroll;
+}
 
 .chat {
     padding: 5px;
     margin-bottom: 5px;
     background-color: #eee;
 }
-
+.messages {
+    display: inline-block;
+    margin-left: 20px;
+    overflow: scroll;
+    width: 55%;
+    height: 450px;
+    border: solid;
+    border-width: 1px;
+}
+.channels {
+    border: solid;
+    border-width: 1px;
+    float: left;
+    width: 30%;
+    height: 250px;
+    overflow: scroll;
+}
 .chat .username {
     font-weight: 800;
 }
@@ -82,3 +103,22 @@ form input[type=text] {
 .spinner img {
     padding: 10px;
 }
+.message {
+
+    margin: 25px;
+}
+.room {
+    margin: 5px;
+    font-size: 25px;
+    padding: 2px;
+}
+
+
+select {
+    width: 100px;
+}
+
+
+
+
+
