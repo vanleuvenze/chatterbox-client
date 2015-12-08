@@ -15,14 +15,20 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <input type='send'></input>
+      <div class='currentUser'>user</div>
+      <input class='send' type='text'></input>
       <button class='enter' type='submit'>Enter username</button>
+
+      <input class='enterRoom' type='text'></input>
+      <button class='newRoom' type='submit'>Create room</button>
       <!-- <input type='user'></input>
       <button class='enterUser' type='submit'>Send Message </button> -->
     </div>
 
     <div id="chats">
-      <div class='channels'></div>
+      <div class='selectedRoom'>Homeroom</div>
+      <div class='channels'>
+      </div>
       <div class='messages'></div>
       
 
