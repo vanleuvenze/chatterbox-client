@@ -7,6 +7,8 @@
 
 var app = {};
 
+app.server = 'http://localhost:3000/classes/messages';
+
 //raw data gatherd on initialization
 //this currentData variable will be updated on each fetch
 var currentData;
@@ -21,11 +23,12 @@ var newRooms = {};
 //modularize a bit more here
 app.fetch = function (callback) {
   $.ajax({
-  url: 'https://api.parse.com/1/classes/chatterbox',
+  url: app.server,
   type: 'GET',
   contentType: 'application/json',
   success: function (data) {
     //take a callback and do something with the fetched data
+    data = JSON.parse(data);
     if (callback) {
       callback(data);
     }
@@ -44,12 +47,14 @@ app.fetch = function (callback) {
 app.post = function (message) {
 
   $.ajax({
-  url: 'https://api.parse.com/1/classes/chatterbox',
+  url: app.server,
   type: 'POST',
   data: message,
   contentType: 'application/json',
   success: function (data) {
     console.log('chatterbox: Message sent');
+    // app.fetch();
+    app.refresh(currentData);
   },
   error: function (data) {
     console.error('chatterbox: Failed to send message');
@@ -206,7 +211,7 @@ setInterval(function () {
   app.fetch();
   app.refresh(currentData);
 
-}, 1000)
+}, 5000)
 
 })
 
