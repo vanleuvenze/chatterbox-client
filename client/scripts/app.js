@@ -146,11 +146,6 @@ app.send = function (message) {
   app.post(message);
 
 }
-app.createRoom = function (roomName) {
-
-
-
-}
 
 
 $(document).ready(function () {
